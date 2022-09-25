@@ -11,7 +11,7 @@ console.log(_.join(['hello', 'world'], '§'));
 
 const Root = (
     <div>
-        <h1 className={s.hello}>Hello World</h1>
+        <h1 className={s.hello}>Hello <span>World</span></h1>
     </div>
 )
 
