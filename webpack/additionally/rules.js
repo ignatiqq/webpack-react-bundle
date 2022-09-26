@@ -1,3 +1,5 @@
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 const mainRules = [
     {
         test: /\.(js|jsx)$/,
@@ -19,22 +21,22 @@ const mainRules = [
     {
         test: /\.(css|scss)$/i,
         use: [
-            {
-                loader: "style-loader",
-            },
-            {
-                loader: "css-loader",
-                options: {
-                    importLoaders: 1,
-                    modules: {
-                        mode: "local",
-                    },
-                },
-            },
-            {
-                loader: "sass-loader",
-            },
-        ],
+          {
+            loader: MiniCssExtractPlugin.loader
+          },
+          {
+              loader: "css-loader",
+              options: {
+                  importLoaders: 1,
+                  modules: {
+                      mode: "local",
+                  },
+              },
+          },
+          {
+              loader: "sass-loader",
+          },
+      ],
         exclude: /node_modules/
     },
     {
